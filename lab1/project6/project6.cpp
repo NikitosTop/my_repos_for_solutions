@@ -14,4 +14,15 @@ int main()
 	printf("this century have: %lf second\n", ((century)+(day * 25)));
 	printf("this 1000 year have: %lf second\n", ((century * 10) + (day * 250)));
 	return 0;
+
+	int day, hour, minutes;
+	minutes = 60;
+	hour = minutes * 60;
+	day = hour * 24;
+	int this_year = day * 365;
+	printf("this year have: %d second\n", this_year + day);
+	int century = this_year * 100;
+	printf("this century have: %d second\n", ((century)+(day * 25)));
+	printf("this 1000 year have: %d second\n", ((century * 10) + (day * 250)));
+	return 0;
 }
