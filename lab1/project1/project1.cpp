@@ -9,6 +9,4 @@ int main()
 	printf("char: %d ", sizeof(char));
 	printf("double: %d", sizeof(double));
 	return 0;
-	int x = 10;
-	printf("%d", x);
 }
