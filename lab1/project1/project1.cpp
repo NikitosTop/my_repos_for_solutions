@@ -10,4 +10,5 @@ int main()
 	printf("double: %d", sizeof(double));
 	return 0;
 	int x = 10;
+	printf("%d", x);
 }
