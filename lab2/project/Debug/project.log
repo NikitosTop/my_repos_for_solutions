@@ -1,0 +1,6 @@
+﻿  project.cpp
+C:\Users\Рома\source\repos\lab2\project\project.cpp(19,9): warning C4476: 'printf' : unknown type field character ')' in format specifier
+C:\Users\Рома\source\repos\lab2\project\project.cpp(23,9): warning C4476: 'printf' : unknown type field character ')' in format specifier
+C:\Users\Рома\source\repos\lab2\project\project.cpp(27,9): warning C4476: 'printf' : unknown type field character ')' in format specifier
+C:\Users\Рома\source\repos\lab2\project\project.cpp(34,9): warning C4476: 'printf' : unknown type field character '|' in format specifier
+  project.vcxproj -> C:\Users\Рома\source\repos\lab2\Debug\project.exe
