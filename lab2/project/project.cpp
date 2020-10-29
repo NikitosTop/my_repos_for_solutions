@@ -16,6 +16,14 @@ int main()
 
 	float coef1, coef2, coef3;
 
+	/*char name1[11] = "Алюминий", name2[11] = "Стекловата", name3[11] = "Глина";
+
+	char type1 = 'М', type2 = 'Т', type3 = 'Д';
+
+	int percent1 = 100, percent2 = 100, percent3 = 20;
+
+	float coef1 = 209.3, coef2 = 0.035, coef3 = 0.73;*/
+
 	printf("1. Введите: вещество, тип, влажность (%), коефициент >");
 
 	scanf("%11s %c %d %f", &name1, &type1, &percent1, &coef1);
