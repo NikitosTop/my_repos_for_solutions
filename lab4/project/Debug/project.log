@@ -1,0 +1,3 @@
+﻿  project.cpp
+C:\Users\Рома\source\repos\my_repos_for_solutions\lab4\project\project.cpp(18): warning C4717: 'main': recursive on all control paths, function will cause runtime stack overflow
+  project.vcxproj -> C:\Users\Рома\source\repos\my_repos_for_solutions\lab4\Debug\project.exe
