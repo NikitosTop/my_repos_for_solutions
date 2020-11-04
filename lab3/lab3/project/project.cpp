@@ -6,9 +6,15 @@
 int main()
 {
     // параметры которые вводятся cc
-    double x = 1.2;
+    double x = 0;
     // параметры которые задаются в программе
-    double a = 1.3, b = 1.2;
+    double a = 0, b = 0;
+    printf("\nEnter x: ");
+    scanf_s("%lf", &x);
+    printf("Enter a: ");
+    scanf_s("%lf", &a);
+    printf("Enter b: ");
+    scanf_s("%lf", &b);
     double c = 1 / (2 * pow(a, 3)); // вычисляем промежуточное значение 1 
     double d = (1.0 / 3.0) * c; //  вычисляем промежуточное значение 2
     double log1 = log((a + x) / (a - x)); // вычисляем логарифм 
@@ -18,7 +24,7 @@ int main()
     if (a - x != 0 && ((a + x) / (a - x)) > 0) // проверяем на ошибку ( на ноль не делим и тело логарифма должно быть больше нуля )
     {
         t1 = d * log1 + c;
-        std::cout << "t1: " << t1 << std::endl;
+        printf("t1 = %lf\n", t1);
     }
     else
     {
@@ -30,7 +36,9 @@ int main()
         (tan((ax + b) * 3.14 / 180) / tan((ax - b) * 3.14 / 180)) > 0)
     {
         t2 = 1 / ab * log((tan((ax + b) * 3.14 / 180) / tan((ax - b) * 3.14 / 180)));
-        std::cout << "t2: " << t2 << std::endl;
+        printf("t2 = %lf\n", t2);
     }
 
+
+    return main();
 }
