@@ -3,16 +3,27 @@
 
 int main()
 {
-	unsigned int k;
-	printf("how many mushrooms do you have: ");
-	scanf_s("%d", &k);
+	// mush1 , mush2 , mush3;
 
-	if (k < 100)
+	int number;
+	std::cout << "Enter number: " << std::endl;
+	std::cin >> number;
+
+	if (number == 0)
 	{
-		printf("i have %d mushrooms", k);
+		std::cout << "mush1" << std::endl;
+		
 	}
-	else
+
+	if (number > 1 && number <= 4)
 	{
-		printf("i call the police");
+		std::cout << "mush2" << std::endl;
 	}
+
+	if (number > 4 && number < 10 || number % 10 == 0)
+	{
+		std::cout << "mush3" << std::endl;
+	}
+
+	return main();
 }
