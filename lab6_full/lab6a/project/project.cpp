@@ -3,17 +3,11 @@
 #include <ctime>
 #include <stdio.h>
 
+
 int main(){
 
-
-    srand(static_cast<unsigned int>(time(0)));
-    int random = 0;
-    for (int j = 0; j < 10; j++)
-    {
-        random = rand();
-    }
-
-    int comp_num = random;
+    srand(time(NULL));
+    int comp_num = 1 + rand() % 100;
 
     int term = 0;
     for (int i = 0; i < i+1; i++)
@@ -30,13 +24,13 @@ int main(){
 
         if (num < comp_num)
         {
-            printf("this number is low\n");
+            printf("this number is less\n");
             term += 1;
         }
 
         if (num > comp_num)
         {
-            printf("this number is biggest\n");
+            printf("this number is bigger\n");
             term += 1;
         }
     }
