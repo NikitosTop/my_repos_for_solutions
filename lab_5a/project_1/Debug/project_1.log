@@ -1,3 +1,0 @@
-﻿  project_1.cpp
-C:\Users\Рома\source\repos\lab_5a\project_1\project_1.cpp(37): warning C4717: 'main': recursive on all control paths, function will cause runtime stack overflow
-LINK : fatal error LNK1168: cannot open C:\Users\Рома\source\repos\lab_5a\Debug\project_1.exe for writing
