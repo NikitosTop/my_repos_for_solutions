@@ -32,5 +32,5 @@ int main()
         }
         
     }
-    printf("Temp: %d", temp);
+    printf("Correct: %d", temp);
 }
