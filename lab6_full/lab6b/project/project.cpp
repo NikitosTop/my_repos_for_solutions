@@ -17,20 +17,15 @@ int main()
 
         srand(time(0) + 10);
         int b = 1 + rand() % 9;
+
         int answer = 0;
-        int i = 0;
-        while (i <= 0)
+        printf("%d * %d\n", a, b);
+        printf("Enter anwser: ");
+        scanf_s("%d", &answer);
+        if (answer = a * b)
         {
-            i++;
-            printf("%d * %d\n", a, b);
-            printf("Enter anwser: ");
-            scanf_s("%d", &answer);
-            if (answer = a * b)
-            {
-                temp++;
-            }
+            temp++;
         }
-        
     }
-    printf("Correct: %d", temp);
+    printf("Correct answers: %d", temp);
 }
