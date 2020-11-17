@@ -7,6 +7,8 @@ int main()
 	double x, y;
 	int i;
 	int h;
+	printf("|   x   |      y     |\n");
+	printf("|-------|------------|\n");
 	for (i = 0; i < 5; i++)
 	{
 		for (x = 0; x < 4; x+=0.25)
@@ -20,6 +22,7 @@ int main()
 				y = 4 - x;
 			}
 			h = (y + 1) * 10;
+			printf("| %5.2lf | %10.7lf |", x + i * 4, y);
 			if (y - 1 - h * 10 > 0.5)
 			{
 				h++;
