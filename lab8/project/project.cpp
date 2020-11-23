@@ -7,11 +7,11 @@
 int main()
 {
 
-	int myArray[200];
-	int term_arr[200];
-	int max = term_arr[0];
-	int term = 0;
-	int n = 0;
+	int myArray[200]; // главный массивй
+	int term_arr[200]; // временный массив
+	int max = term_arr[0]; // максимальное значение массива
+	int term = 0; // временная переменная 
+	int n = 0; // номер элемента в массиве 
 	srand(time(NULL));
 
 	// заполняем массив числами
