@@ -45,7 +45,7 @@ int main()
         
     }
 
-    printf("number: %d", number_3);
+    printf(" number: %d", number_3);
     printf(" sum: %d", sum);
     printf(" term: %d", term);
 
