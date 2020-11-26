@@ -23,7 +23,7 @@ int main()
 	{
 		if (myArray[i] > 0)
 		{
-			term++;
+			++term;
 		}
 		else
 		{
@@ -39,17 +39,17 @@ int main()
 			numbers++;
 	}
 
-	//for (int j = 0; j < 200; j++) // вывод массива
-	//{
-	//	if (j % 10 == 0 && j != 0)
-	//	{
-	//		printf("\n");
-	//	}
-	//	else 
-	//	{
-	//		printf("%3d  ", myArray[j]);
-	//	}
-	//}
+	for (int j = 0; j < 200; j++) // вывод массива
+	{
+		if (j % 10 == 0 && j != 0)
+		{
+			printf("\n");
+		}
+		else 
+		{
+			printf("%3d  ", myArray[j]);
+		}
+	}
 	for (int i = 0; i < n; i++) // вывод массива времееных данных
 	{
 		if (i % 10 == 0 && i != 0)
