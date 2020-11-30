@@ -38,16 +38,16 @@ int main()
 		cout << "Enter amount of numbers: ";
 		cin >> amount_of_numbers;
 
-		numbers = numbers - amount_of_numbers;
+		amount_of_elements = amount_of_elements - amount_of_numbers;
 
-		if (position + amount_of_numbers > numbers)
+		if (position + amount_of_numbers > amount_of_elements)
 		{
-			for (int i = 0; i < numbers; i++)
+			for (int i = 0; i < amount_of_elements; i++)
 			{
 				Arr[position + i] = Arr[position + i + amount_of_numbers];
 			}
 
-			for (int i = 0; i < numbers; i++)
+			for (int i = 0; i < amount_of_elements; i++)
 			{
 				cout << Arr[i] << " ";
 			}
@@ -70,7 +70,7 @@ int main()
 		cout << "Enter position: ";
 		cin >> position;
 
-		numbers = numbers + amount_of_numbers;
+		amount_of_elements = amount_of_elements + amount_of_numbers;
 
 		for (int i = 0; i < position; i++)
 		{
@@ -84,12 +84,12 @@ int main()
 			Arr_second[i] = numbers_2;
 		}
 
-		for (int i = position + amount_of_numbers; i <= numbers; i++)
+		for (int i = position + amount_of_numbers; i <= amount_of_elements; i++)
 		{
 			Arr_second[i] = Arr[position + i - (position + amount_of_numbers)];
 		}
 
-		for (int i = 0; i < numbers; i++)
+		for (int i = 0; i < amount_of_elements; i++)
 		{
 			cout << Arr_second[i] << " ";
 		}
