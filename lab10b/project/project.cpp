@@ -2,28 +2,19 @@
 #include <stdio.h>
 #include <time.h>
 
-int write_double_array(int row, int col, int Arr[])
+const int N = 100;
+const int M = 100;
+
+
+int write_double_array(int row, int col, int Arr_double[N][M])
 {
-
-	int Arr_2[100][100] = { {} };
-
-	int term = 0;
-	for (int i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
-			Arr_2[i][j] = Arr[term];
-			term++;
-		}
-	}
-
 	std::cout << std::endl;
 
 	for (int i = 0; i < row; i++)
 	{
 		for (int j = 0; j < col; j++)
 		{
-			std::cout << Arr_2[i][j] << "\t";
+			std::cout << Arr_double[i][j] << "\t";
 		}
 		std::cout << std::endl;
 	}
@@ -31,56 +22,47 @@ int write_double_array(int row, int col, int Arr[])
 	return 0;
 }
 
-int positive_elements(int row, int col, int Arr[])
+int positive_elements(int row, int col, int Arr_double[N][M])
 {
-	int Arr_2[100][100] = { {} };
-
-	int term = 0;
-	for (int i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
-			Arr_2[i][j] = Arr[term];
-			term++;
-		}
-	}
-
 	int numbers = 0;
 
+	int row_element = 0;
+
+	std::cout << "Enter row elements: ";
+
+	std::cin >> row_element;
+
 	for (int i = 0; i < row; i++)
 	{
 		for (int j = 0; j < col; j++)
 		{
-			if (Arr_2[i][j] > 0)
+			if (Arr_double[i][j] > 0)
 			{
 				numbers++;
+				if (i = row_element)
+				{
+					std::cout << std::endl;
+					std::cout << std::endl;
+					break;
+				}
 			}
+			numbers = 0;
 		}
-		std::cout << std::endl;
-		std::cout << "Row" << "(" << i + 1 << ")" << numbers;
-		std::cout << std::endl;
-		numbers = 0;
 	}
 
-	return 0;
+	return numbers;
 }
 
-int double_array(int row, int col)
+int double_array(int row, int col, int Arr_double[N][M])
 {
-	srand(time(NULL));
 
-	int Arr[100] = {};
-
-	int size = row * col;
-
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < row; i++)
 	{
-		Arr[i] = -10 + rand() % 20;
+		for (int j = 0; j < col; j++)
+		{
+			Arr_double[i][j] = -100 + rand() % 200;
+		}
 	}
-
-	write_double_array(row, col, Arr);
-
-	positive_elements(row, col, Arr);
 
 	return 0;
 }
@@ -89,6 +71,11 @@ int main()
 {
 	srand(time(NULL));
 
+	const int N = 100;
+	const int M = 100;
+
+	int Arr_double[N][M] = {};
+
 	int row = 0;
 	int col = 0;
 	std::cout << "Enter row: ";
@@ -96,5 +83,9 @@ int main()
 	std::cout << "Enter col: ";
 	std::cin >> col;
 
-	double_array(row, col);
+	double_array(row, col, Arr_double);
+
+	write_double_array(row, col, Arr_double);
+
+	std::cout << "count positive: " << positive_elements(row, col, Arr_double);
 }

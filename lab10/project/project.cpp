@@ -62,7 +62,7 @@ int double_arr(int row, int col, int Arr[])
 
 	sum = sum / row;
 
-	cout << "sum: ";
+	//cout << "average: ";
 
 	return sum;
 
@@ -86,7 +86,7 @@ int main()
 
 	for (int i = 0; i < size; i++)
 	{
-		Arr[i] = 20 + rand() % 70;
+		Arr[i] = 1 + rand() % 4;
 	}
 
 	for (int i = 0; i < size; i++)
@@ -96,5 +96,10 @@ int main()
 
 	cout << endl;
 
-	cout << double_arr(row, col, Arr);
+	cout << "average:" << double_arr(row, col, Arr);
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << Arr[i] << " ";
+	}
 }
