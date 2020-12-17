@@ -25,40 +25,23 @@ void Flip(int array[], int end)
 	}
 }
 
-int PancakeSort(int array[], int n)
+int* PancakeSort(int n, int* new_arr)
 {
-	auto start = std::chrono::high_resolution_clock::now();
-
 	for (int subArrayLength = n - 1; subArrayLength >= 0; subArrayLength--)
 	{
-		int indexOfMax = IndexOfMax(array, subArrayLength);
+		int indexOfMax = IndexOfMax(new_arr, subArrayLength);
 		if (indexOfMax != subArrayLength)
 		{
-			Flip(array, indexOfMax);
-			Flip(array, subArrayLength);
+			Flip(new_arr, indexOfMax);
+			Flip(new_arr, subArrayLength);
 		}
 	}
 
-	auto end = std::chrono::high_resolution_clock::now();
-	std::chrono::duration<double> duration = end - start;
-
-	for (int i = 0; i < n; i++)
-	{
-		std::cout << array[i] << " ";
-	}
-
-	std::cout << std::endl;
-
-	std::cout << "Sort time: " << duration.count() << " ";
-
-	std::cout << std::endl;
-
-	return 0;
+	return &new_arr[0];
 }
 
-int Odd_even_sort(int array[], int n)
+int* Odd_even_sort(int n, int* new_arr)
 {
-	auto start = std::chrono::high_resolution_clock::now();
 
 	int isSorted = 0;
 	while (isSorted == 0)
@@ -66,43 +49,27 @@ int Odd_even_sort(int array[], int n)
 		isSorted = 1;
 		for (int i = 0; i < n - 1; i += 2)
 		{
-			if (array[i] > array[i + 1])
+			if (new_arr[i] > new_arr[i + 1])
 			{
-				int temp = array[i];
-				array[i] = array[i + 1];
-				array[i + 1] = temp;
+				int temp = new_arr[i];
+				new_arr[i] = new_arr[i + 1];
+				new_arr[i + 1] = temp;
 				isSorted = 0;
 			}
 		}
 
 		for (int i = 1; i <= n - 2; i += 2)
 		{
-			if (array[i] > array[i + 1])
+			if (new_arr[i] > new_arr[i + 1])
 			{
-				int temp = array[i];
-				array[i] = array[i + 1];
-				array[i + 1] = temp;
+				int temp = new_arr[i];
+				new_arr[i] = new_arr[i + 1];
+				new_arr[i + 1] = temp;
 				isSorted = 0;
 			}
 		}
 	}
-
-	auto end = std::chrono::high_resolution_clock::now();
-	std::chrono::duration<double> duration = end - start;
-
-
-	for (int i = 0; i < n; i++)
-	{
-		std::cout << array[i] << " ";
-	}
-
-	std::cout << std::endl;
-
-	std::cout << "Sort time: " << duration.count() << " ";
-
-	std::cout << std::endl;
-
-	return 0;
+	return &new_arr[0];
 }
 
 
@@ -134,6 +101,10 @@ int main()
 	std::cout << std::endl;
 	std::cout << "Выберите тип сортировки (1 - PancakeSort) или (2 - Odd_even_sort): ";
 	std::cin >> type_arr;
+
+	double during_arr[9] = {};
+
+	int during_term = 0;
 
 	for (int a = 0; a < 9; a++)
 	{
@@ -186,26 +157,73 @@ int main()
 			}
 		}
 
+		int* new_arr = (int*)malloc(sizeof(int) * n);
+
+		for (int i = 0; i < n; i++)
+		{
+			new_arr[i] = Arr[i];
+		}
 
 		if (type_arr == 1)
 		{
+			int* target;
 
 			std::cout << std::endl;
 
-			PancakeSort(Arr, amount_numbers);
+			target = PancakeSort(amount_numbers, new_arr);
+
+			for (int i = 0; i < amount_numbers; i++)
+			{
+				std::cout << target[i] << " ";
+			}
+
+			auto start = std::chrono::high_resolution_clock::now();
+
+			PancakeSort(amount_numbers, new_arr);
+
+			auto end = std::chrono::high_resolution_clock::now();
+			std::chrono::duration<double> duration = end - start;
+
+			during_arr[during_term] = duration.count();
+
+			during_term++;
 
 		}
 		else
 		{
+			int* target;
 
 			std::cout << std::endl;
 
-			Odd_even_sort(Arr, amount_numbers);
+			target = Odd_even_sort(amount_numbers, new_arr);
+
+			for (int i = 0; i < amount_numbers; i++)
+			{
+				std::cout << target[i] << " ";
+			}
+
+			auto start = std::chrono::high_resolution_clock::now();
+
+			Odd_even_sort(amount_numbers, new_arr);
+
+			auto end = std::chrono::high_resolution_clock::now();
+			std::chrono::duration<double> duration = end - start;
+
+			during_arr[during_term] = duration.count();
+
+			during_term++;
 
 		}
+
 	}
 
 	std::cout << std::endl;
+
+	for (int i = 0; i < 9; i++)
+	{
+		std::cout << " | " << during_arr[i] << " | ";
+
+	}
 
 }
 
