@@ -5,31 +5,32 @@
 
 using namespace std;
 
-void input_array_function()
+void input_array_function(List_Structure* array)
 {
+
 	for (int i = 0; i < 10; i++)
 	{
 		cout << "Enter name: ";
 
-		cin >> amount[i].name;
+		cin >> array[i].name;	
 
 		cout << "Enter crypto: ";
 
-		cin >> amount[i].crypto;
+		cin >> array[i].crypto;
 
 		cout << "Enter price: ";
 
-		cin >> amount[i].price;
+		cin >> array[i].price;
 
 		cout << "Enter volume: ";
 
-		cin >> amount[i].volume;
+		cin >> array[i].volume;
 
 		cin.get();
 	}
 }
 
-void random_input_function()
+void random_input_function(List_Structure* array)
 {
 	srand(time(NULL));
 
@@ -46,43 +47,43 @@ void random_input_function()
 
 	for (int i = 0; i < 10; i++)
 	{
-		strcpy(amount[i].name, array_name[random_array[i]]);
+		strcpy(array[i].name, array_name[random_array[i]]);
 
-		strcpy(amount[i].crypto, array_crypto[random_array[i]]);
+		strcpy(array[i].crypto, array_crypto[random_array[i]]);
 
-		amount[i].price = array_price[random_array[i]];
+		array[i].price = array_price[random_array[i]];
 
-		amount[i].volume = array_volume[random_array[i]];
+		array[i].volume = array_volume[random_array[i]];
 	}
 }
 
-void sort_function()
+void sort_function(List_Structure* array)
 {
 	int min;
 
-	struct List_Structure *temp_var;
+	struct List_Structure temp_var;
 
 	for (int i = 0; i < 10 - 1; i++) {
 		min = i;
 
 		for (int j = i + 1; j < 10; j++)
-			if (strcmp(amount[min].name, amount[j].name) > 0)
+			if (strcmp(array[min].name, array[j].name) > 0)
 			{
 				min = j;
 			}
 
 		if (min > i) {
 
-			temp_var = amount[i];
+			temp_var = array[i];
 
-			amount[i] = amount[min];
+			array[i] = array[min];
 
-			amount[min] = temp_var;
+			array[min] = temp_var;
 		}
 	}
 }
 
-void print()
+void print(List_Structure* array)
 {
 	printf("-------------------------------------------------\n");
 	printf("|                world crypto money              |\n");
@@ -93,7 +94,7 @@ void print()
 
 	for (int i = 0; i < 10; i++)
 		printf("| %12s |   %4s   | %8.2lf | %-9d |\n",
-			amount[i].name, amount[i].crypto, amount[i].price, amount[i].volume);
+			array[i].name, array[i].crypto, array[i].price, array[i].volume);
 	printf("-------------------------------------------------\n");
 }
 

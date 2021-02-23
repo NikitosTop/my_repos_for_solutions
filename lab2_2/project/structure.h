@@ -1,5 +1,5 @@
-#ifdef STRUCTURE_H
-#define STRUCT_H
+#ifndef STRUCTURE_H
+#define STRUCTURE_H
 
 #include <iostream>
 

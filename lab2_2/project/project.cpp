@@ -1,4 +1,6 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
+#define PRINT_TYPE true
+#define DEBUG
 
 #include <iostream>
 #include <stdio.h>
@@ -11,25 +13,26 @@
 
 using namespace std;
 
-void switch_function(int input_number)
+void switch_function(int input_number, List_Structure* array)
 {
+
 	switch (input_number)
 	{
 
 	case 1:
-		input_array_function();
+		input_array_function(array);
 		break;
 
 	case 2:
-		random_input_function();
+		random_input_function(array);
 		break;
 
 	case 3:
-		sort_function();
+		sort_function(array);
 		break;
 
 	case 4:
-		print();
+		print(array);
 		break;
 
 	default:
@@ -49,16 +52,20 @@ int main()
 	{
 		int input_number;
 
+		List_Structure* array = amount;
+
 		cin >> input_number;
 
 		if (input_number != 5)
 		{
-			switch_function(input_number);
+			switch_function(input_number, array);
 		}
 		else
 		{
 			break;
 		}
 	}
+
+	delete amount;
 }
 
