@@ -1,5 +1,7 @@
 #ifndef INPUT_H
 #define INPUT_H
+#define DEBUG
+
 #include <iostream>
 #include "structure.h"
 
@@ -7,6 +9,24 @@ using namespace std;
 
 void input_array_function(List_Structure* array)
 {
+
+#ifdef DEBUG
+
+	time_t now = time(0);
+
+	// convert now to string form
+	char* dt = ctime(&now);
+
+	cout << "The local date and time is: " << dt << endl;
+
+	cout << "FILE:" << __FILE__ << endl;
+	cout << "function name: " << __func__ << endl;
+
+#else
+
+	cout << "debug not";
+
+#endif
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -32,6 +52,25 @@ void input_array_function(List_Structure* array)
 
 void random_input_function(List_Structure* array)
 {
+
+#ifdef DEBUG
+
+	time_t now = time(0);
+
+	// convert now to string form
+	char* dt = ctime(&now);
+
+	cout << "The local date and time is: " << dt << endl;
+
+	cout << "FILE:" << __FILE__ << endl;
+	cout << "function name: " << __func__ << endl;
+
+#else
+
+	cout << "debug not";
+
+#endif
+
 	srand(time(NULL));
 
 	char array_name[10][15] = { "Bitcoin", "Ethereum", "Tether", "Cardano", "Polkadot", "XRP", "Binance_coin", "Litecoin", "Chainlink", "Stellar" };
@@ -55,10 +94,29 @@ void random_input_function(List_Structure* array)
 
 		array[i].volume = array_volume[random_array[i]];
 	}
+
 }
 
 void sort_function(List_Structure* array)
 {
+#ifdef DEBUG
+
+	time_t now = time(0);
+
+	// convert now to string form
+	char* dt = ctime(&now);
+
+	cout << "The local date and time is: " << dt << endl;
+
+	cout << "FILE:" << __FILE__ << endl;
+	cout << "function name: " << __func__ << endl;
+
+#else
+
+	cout << "debug not";
+
+#endif
+
 	int min;
 
 	struct List_Structure temp_var;
@@ -85,6 +143,24 @@ void sort_function(List_Structure* array)
 
 void print(List_Structure* array)
 {
+#ifdef DEBUG
+
+	time_t now = time(0);
+
+	// convert now to string form
+	char* dt = ctime(&now);
+
+	cout << "The local date and time is: " << dt << endl;
+
+	cout << "FILE:" <<  __FILE__ << endl;
+	cout << "function name: " <<  __func__ << endl;
+
+#else
+
+	cout << "debug not";
+
+#endif	
+
 	printf("-------------------------------------------------\n");
 	printf("|                world crypto money              |\n");
 	printf("|------------------------------------------------|\n");

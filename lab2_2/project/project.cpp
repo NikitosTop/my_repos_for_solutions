@@ -1,6 +1,10 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
-#define PRINT_TYPE true
+#define PRINT_TYPE
 #define DEBUG
+
+
+
+
 
 #include <iostream>
 #include <stdio.h>
@@ -8,6 +12,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <ctime>
 #include "structure.h"
 #include "input.h"
 
@@ -16,17 +21,22 @@ using namespace std;
 void switch_function(int input_number, List_Structure* array)
 {
 
+#ifdef PRINT_TYPE
+
+	switch (input_number) {
+
+		case 1: 
+			input_array_function(array); 
+			break;
+		case 2: 
+			random_input_function(array); 
+			break;
+	}
+
+#endif
+
 	switch (input_number)
 	{
-
-	case 1:
-		input_array_function(array);
-		break;
-
-	case 2:
-		random_input_function(array);
-		break;
-
 	case 3:
 		sort_function(array);
 		break;
