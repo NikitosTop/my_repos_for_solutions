@@ -1,6 +1,8 @@
+#pragma once
 #ifndef INPUT_H
 #define INPUT_H
 #define DEBUG
+
 
 #include <iostream>
 #include "structure.h"
@@ -95,6 +97,8 @@ void random_input_function(List_Structure* array)
 		array[i].volume = array_volume[random_array[i]];
 	}
 
+	DEBUG;
+
 }
 
 void sort_function(List_Structure* array)
@@ -139,6 +143,8 @@ void sort_function(List_Structure* array)
 			array[min] = temp_var;
 		}
 	}
+
+	DEBUG;
 }
 
 void print(List_Structure* array)
