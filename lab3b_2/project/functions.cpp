@@ -1,8 +1,11 @@
-
+#pragma once 
 #include <iostream>
 #include <time.h>
 #include "functions.h"
+#define DEBUG
+
 using namespace std;
+
 
 void random_array(Array* array, Array size)
 {
