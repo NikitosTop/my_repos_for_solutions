@@ -1,6 +1,8 @@
+#pragma once 
 #include <time.h>
 #include <iostream>
 #include "function.h"
+#define DUBUG
 using namespace std;
 
 void random_function(Array_full* array, Array_full size)

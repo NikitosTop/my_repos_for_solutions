@@ -1,6 +1,7 @@
 #pragma once
 #ifndef _FUNCTION_H_
 #define _FUNCTION_H_
+#define DEBUG
 
 #include <time.h>
 #include <iostream>
