@@ -16,5 +16,4 @@ int main()
 	find_min_elements(full_array);
 
 	print(full_array);
-
 }
