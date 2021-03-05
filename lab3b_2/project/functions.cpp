@@ -44,10 +44,19 @@ void sort_function(Array* array, Array size)
 			MAX.temp_size = max;
 		}
 	}
-}
 
+}
 void print(Array* array, Array size)
 {
+	cout << "[ ";
+	for (int i = 0; i < size.size; i++)
+	{
+		cout << array[i].numbers << ",";
+	}
+	cout << " ]";
+
+	cout << endl;
+
 	cout << "min array: ";
 	cout << "[ ";
 	int j = 0;
@@ -85,4 +94,36 @@ void print(Array* array, Array size)
 		cout << array[i].max << ",";
 	}
 	cout << " ]";
+
+	cout << endl;
+
+	add_functions(array, size);
+
+	cout << "[ ";
+	for (int i = 0; i < size.size; i++)
+	{
+		cout << array[i].numbers << ",";
+	}
+	cout << " ]";
+
+}
+
+void add_functions(Array* array, Array size)
+{
+	int a = 0, b = 0, c = 0;
+	for (int i = 0; i < ZERO.temp_size; i++)
+	{
+		array[i].numbers = array[a].zero;
+		a++;
+	}
+	for (int i = ZERO.temp_size; i < MIN.temp_size + ZERO.temp_size; i++)
+	{
+		array[i].numbers = array[b].min;
+		b++;
+	}
+	for (int i = MIN.temp_size; i < MAX.temp_size + MIN.temp_size; i++)
+	{
+		array[i].numbers = array[c].max;
+		c++;
+	}
 }

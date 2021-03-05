@@ -24,4 +24,6 @@ void sort_function(Array* array, Array size);
 
 void print(Array* array, Array size);
 
+void add_functions(Array* array, Array size);
+
 #endif

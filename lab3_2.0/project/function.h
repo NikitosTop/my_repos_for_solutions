@@ -2,7 +2,7 @@
 #ifndef _FUNCTION_H_
 #define _FUNCTION_H_
 #define DEBUG
-#define AMOUNT 101
+#define AMOUNT 10
 
 #include <time.h>
 #include <iostream>
