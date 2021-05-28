@@ -1,0 +1,6 @@
+bodya      bodya     323.00  42124
+hello      world     4124.00  41241
+kill       this      4124.00  124124
+nikita     topchiy   4124.00  214214
+nikita     ne        -107374176.00  -858993460
+oh         sifsf     12421.00  4214
