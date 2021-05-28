@@ -1,41 +1,26 @@
-﻿#include "class.h"
-#include <iomanip>
-
+﻿
+#include <iostream>
+using namespace std;
+#include "class.h"
+#include <conio.h>
 int main()
 {
-	setlocale(LC_ALL, "ru");
+	int option;
+	SUM a(1, 1), * p;
+	p = &a;
+	int b; int c;
 
-	string name = "";
-	char typ;
-	float nom;
-	int colvo;
+	cout << "Input numbers: ";
+	cin >> b >> c;
+	a.set(b, c);
+	a.addition();
+	a.show();
+	_getch();
 
-	const int Size = 3;
+	cout << endl;
 
-	Information object[Size];
-
-	cout << "Setter \n";
-	cout << "input data: \nname, type, nominal, amount" << endl;
-	for (int i = 0; i < Size; i++) {
-		cin >> name;
-		cin >> typ;
-		cin >> nom;
-		cin >> colvo;
-		object[i].set_inform(name, typ, nom, colvo);
-	}
-	cout << "\n ----------------------------------------------\n";
-	cout << "Show\n";
-	for (int i = 0; i < Size; i++) {
-		object[i].show_inform();
-	}
-	cout << "\n ----------------------------------------------\n";
-
-	cout << "Get\n";
-	cout << "name    type   nominal   \t   amount" << endl;
-	for (int i = 0; i < Size; i++) {
-		object[i].get_inform(name, typ, nom, colvo);
-		cout << name << "\t\t" << typ << "\t" << nom << "\t\t" << colvo << endl;
-	}
-
-	return 0;
+	p->set(1, 1);
+	p->addition();
+	p->show();
+	_getch();
 }
