@@ -23,7 +23,7 @@ void delete_func(char* array)
 
 		if (words == input_numbers)
 		{
-			for (int j = array[i]; j < 255; j++)
+			for (int j = i; j < 255; j++)
 			{
 				cout << *(array + j);
 				if (array[j] == ' ')

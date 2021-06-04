@@ -435,7 +435,7 @@ void addfile(List* head, List* tail) {
 	int i = 1;
 
 	FILE* f;
-	fopen_s(&f, "Spis1.txt", "w");
+	fopen_s(&f, "data.txt", "w");
 	if (!f) {
 		puts("error opening");
 		exit(0);

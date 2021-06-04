@@ -13,25 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\res">
-      <UniqueIdentifier>{4ccf660b-9126-42e4-995b-3fa19720551d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="..\..\..\..\Downloads\20694.otf">
-      <Filter>Source Files\res</Filter>
-    </Font>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="game.cpp">
+    <ClCompile Include="project.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="func.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
